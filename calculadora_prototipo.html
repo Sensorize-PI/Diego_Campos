@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="techgym.css">
+</head>
+
+<body>
+    <span>
+        <h1>Seja bem-vindo à TechGym</h1> <br>
+        Nome da sua academia: <input id="input_nome"> <br>
+        Número de clientes: <input id="input_clientes"> <br>
+        Número de equipamentos: <input id="input_equipamentos"> <br>
+        Faturamento mensal: <input id="input_faturamento"> <br>
+        <button onclick="Clique_aqui_para_saber_os_riscos()">Clique aqui para saber os riscos</button>
+        <div class="background"></div>
+        <div class="body"></div>
+        <div class="input"></div>
+        <div id="div_economia"></div>
+    </span>
+</body>
+
+</html>
+
+<script>
+    function Clique_aqui_para_saber_os_riscos() {
+        var clientes_total = Number(input_clientes.value)
+        var equipamentos_total = Number(input_equipamentos.value)
+        var razao = Number(clientes_total / equipamentos_total)
+        var porcentagem = Number(clientes_total * 0.20)
+        var perda_anual = Number(input_faturamento.value * 0.20) * 12
+        div_economia.innerHTML = ''
+        div_economia.innerHTML += ` <h3>Olá academia ${input_nome.value}, somos gratos em recebê-lo! <br>
+        Sabia que quase 20% das pessoas desistem das academias por conta da superlotação? <br>
+        Registramos aqui suas informações e chegamos na seguinte conclusão: <br>
+        Na sua academia hoje, existem ${razao} clientes por máquina, imagina se grande parte desses clientes<br>
+        resolverem fazer o mesmo tipo de treino no mesmo dia? <br>
+        Através dos nossos serviços, possibilitaremos rotações de treinos à modo que não aconteça este conflito,<br>
+        caso não ocorra uma eficiente rotabilidade dos treinos, ${porcentagem} clientes do número inserido<br>
+        tem a probabilidade de saírem de sua academia e ser comum a reclamação do estabelecimento.<br>
+        Trazendo dados mais financeiros, a perda anual destes possíveis ${porcentagem} clientes, podem <br>
+        resultar em um déficit de ${perda_anual}R$ sobre suas finanças, é muito importante a fidelização de clientes, não? </h3> `
+
+    }
+
+
+</script>
